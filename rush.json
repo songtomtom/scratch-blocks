@@ -473,5 +473,15 @@
     //   "reviewCategory": "tools",
     //   "tags": ["tools"]
     // }
+    {
+      "packageName": "my-app",
+      "projectFolder": "packages/my-app",
+      "reviewCategory": "packages"
+    },
+    {
+      "packageName": "scratch-blocks",
+      "projectFolder": "packages/scratch-blocks",
+      "reviewCategory": "packages"
+    }
   ]
 }
