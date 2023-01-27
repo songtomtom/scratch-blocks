@@ -9,15 +9,6 @@ function App() {
     const workspaceConfiguration = {
       toolbox: makeToolboxXML(true),
       media: "/blocks-media/",
-      collapse: false,
-      zoom: {
-        controls: false,
-        wheel: true,
-        startScale: 0.8,
-        maxScale: 3,
-        minScale: 0.3,
-        scaleSpeed: 1.2,
-      },
     };
 
     ScratchBlocks.inject("scratch", {
