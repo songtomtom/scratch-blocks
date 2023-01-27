@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+
+import ScratchBlocks from "scratch-blocks";
+import "./App.css";
+import makeToolboxXML from "./make-toolbox-xml";
 
 function App() {
+  useEffect(() => {
+    const workspaceConfiguration = {
+      toolbox: makeToolboxXML(true),
+      media: "/blocks-media/",
+      collapse: false,
+      zoom: {
+        controls: false,
+        wheel: true,
+        startScale: 0.8,
+        maxScale: 3,
+        minScale: 0.3,
+        scaleSpeed: 1.2,
+      },
+    };
+
+    ScratchBlocks.inject("scratch", {
+      ...workspaceConfiguration,
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="App">
+      <div id="scratch" className="scratch"></div>
     </div>
   );
 }
