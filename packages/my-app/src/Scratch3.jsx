@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
 import ScratchBlocks from "scratch-blocks";
 import "./App.css";
 import makeToolboxXML from "./make-toolbox-xml";
 
-function App() {
+function Scratch3() {
   useEffect(() => {
     const workspaceConfiguration = {
       toolbox: makeToolboxXML(true),
@@ -16,11 +16,7 @@ function App() {
     });
   }, []);
 
-  return (
-    <div id="App">
-      <div id="scratch" className="scratch"></div>
-    </div>
-  );
+  return <div id="scratch" className="scratch" />;
 }
 
-export default App;
+export default Scratch3;
